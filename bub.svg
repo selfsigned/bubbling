@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bub - vector rebuild of bub.png.
+     Every animatable part is its own top-level group, so any of them can be
+     transformed without touching the others:
+       #bub-tail    wags around the joint with the body
+       #bub-eyes    both eyes (with #bub-eye-left / #bub-eye-right inside)
+       #bub-mouth   the smile
+       #bub-body    cream interior
+       #bub-outline ink ring (open where the shine rays cross)
+       #bub-shine   the two highlight rays
+     Transform origins are wired up below so CSS/JS transforms pivot where the art expects. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640"
+     role="img" aria-labelledby="bub-title bub-desc">
+  <title id="bub-title">Bub</title>
+  <desc id="bub-desc">A round cream speech-bubble character with a smiling face, two shine rays on the upper right and a small tail on the lower left.</desc>
+  <style>
+    #bub-body, #bub-outline, #bub-shine { transform-box: view-box; transform-origin: 320.81px 319.78px; }
+    #bub-tail { transform-box: view-box; transform-origin: 140.44px 505.63px; }
+    #bub-eyes { transform-box: view-box; transform-origin: 322.65px 340.11px; }
+    #bub-eye-left, #bub-eye-right { transform-box: fill-box; transform-origin: center; }
+    #bub-mouth { transform-box: view-box; transform-origin: 322.65px 375.43px; }
+  </style>
+
+  <!-- interior -->
+  <g id="bub-body">
+    <circle cx="320.81" cy="319.78" r="299.14" fill="#FAF3F1"/>
+  </g>
+
+  <!-- shine rays (light periwinkle behind blue) -->
+  <g id="bub-shine">
+    <path id="bub-shine-light" d="M 365.41 225.78 L 439.99 57.59 Q 444.5 47.41 454.65 52.02 A 299.14 299.14 0 0 1 514.8 91.79 Q 523.01 99.32 514.53 106.55 L 370.39 229.49 Q 359.74 238.57 365.41 225.78 Z" fill="#B9C8FD"/>
+    <path id="bub-shine-blue" d="M 373.95 247.35 L 524.64 116.27 Q 533.04 108.96 540.89 116.87 A 299.14 299.14 0 0 1 609.01 238.82 Q 611.62 249.65 600.52 248.7 Q 487.9 267.21 377.33 257.73 Q 363.39 256.54 373.95 247.35 Z" fill="#5E8EFE"/>
+  </g>
+
+  <!-- outline: two arcs, open where the shine rays cross and where the tail joins -->
+  <g id="bub-outline">
+    <path d="M 601.15 285.63 A 282.41 282.41 0 0 1 170.26 558.72 M 86.48 477.39 A 282.41 282.41 0 0 1 404.25 49.98" fill="none" stroke="#30302F" stroke-width="33.47" stroke-linecap="butt"/>
+    <circle id="bub-cap-top" cx="601.15" cy="285.63" r="16.73" fill="#30302F"/>
+    <circle id="bub-cap-right" cx="404.25" cy="49.98" r="16.73" fill="#30302F"/>
+  </g>
+
+  <!-- tail: solid hook that chords across the outline, tip at the bottom left -->
+  <g id="bub-tail">
+    <path d="M 66.84 477.85 C 50.08 519.3 20.79 566.69 53.79 594.71 Q 79.84 613.05 109.77 602.13 L 172.14 579.36 L 179.68 543.77 C 155.13 552.33 105.86 574.01 90.27 574.46 C 37.23 581.23 100.88 496.67 101.19 467.5 L 72.59 486.73 A 299.14 299.14 0 0 1 66.84 477.85 Z" fill="#30302F" stroke="#30302F" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+
+  <!-- eyes: one group for both, plus a group per eye for blinks and glances -->
+  <g id="bub-eyes" fill="#30302F">
+    <ellipse id="bub-eye-left" cx="244.36" cy="340.11" rx="20.98" ry="31.88"/>
+    <ellipse id="bub-eye-right" cx="400.93" cy="340.11" rx="20.98" ry="31.88"/>
+  </g>
+
+  <!-- smile -->
+  <g id="bub-mouth">
+    <path d="M 290.25 405.9 A 44.47 44.47 0 0 0 355.23 405.69" fill="none" stroke="#30302F" stroke-width="20.64" stroke-linecap="round"/>
+  </g>
+</svg>

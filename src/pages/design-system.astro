@@ -1,0 +1,184 @@
+---
+import '../styles/global.css';
+import BubblingLogo from '../components/BubblingLogo.svelte';
+import ButtonShowcase from '../components/design-system/ButtonShowcase.svelte';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Design system — Bubbling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="/" aria-label="Bubbling home"><BubblingLogo size={34} /></a>
+      <span class="topbar-label">Brand system · 01</span>
+    </header>
+    <main>
+      <div class="eyebrow">BUBBLING / DESIGN SYSTEM</div>
+      <h1>One clear <span class="tagline-word">language</span><br />Every <span class="tagline-word">interaction</span></h1>
+      <p class="intro">A small set of shared tokens and components for the Bubbling concept.</p>
+
+      <section aria-labelledby="colors-heading">
+        <div class="section-heading">
+          <span class="section-number">01</span>
+          <h2 id="colors-heading">Color</h2>
+        </div>
+        <div class="swatches">
+          <div class="swatch"><span class="color-chip ink"></span><span>Ink <code>#171B22</code></span></div>
+          <div class="swatch"><span class="color-chip light-ink"></span><span>Light ink <code>#7F8B97</code></span></div>
+          <div class="swatch"><span class="color-chip paper"></span><span>Paper <code>#FFFFFF</code></span></div>
+          <div class="swatch"><span class="color-chip primary-blue"></span><span>Primary blue <code>#2E5DB8</code></span></div>
+          <div class="swatch"><span class="color-chip secondary-action-blue"></span><span>Secondary action blue <code>#4A72C5</code></span></div>
+          <div class="swatch"><span class="color-chip secondary-blue"></span><span>Light secondary blue <code>#B8C7FA</code></span></div>
+        </div>
+      </section>
+
+      <section aria-labelledby="buttons-heading">
+        <div class="section-heading">
+          <span class="section-number">02</span>
+          <h2 id="buttons-heading">Buttons</h2>
+        </div>
+        <p class="section-copy">Logo blue is primary; the mid-blue is the secondary action, while pale blue stays a soft accent. Press either button to see its subtle material highlight.</p>
+        <ButtonShowcase client:load />
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(body) {
+    margin: 0;
+    min-height: 100vh;
+    background: #fff;
+    color: #171b22;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem clamp(1.25rem, 6vw, 5.5rem);
+    border-bottom: 1px solid #e8edf2;
+  }
+
+  .topbar a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .topbar-label,
+  .eyebrow,
+  .section-number {
+    color: #73808d;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  main {
+    width: min(100% - 2.5rem, 960px);
+    margin: 0 auto;
+    padding: clamp(4rem, 10vw, 7.5rem) 0 6rem;
+  }
+
+  h1 {
+    margin: 1.2rem 0 0;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 500;
+    letter-spacing: -0.065em;
+    line-height: 0.99;
+  }
+  .tagline-word {
+    font-family: 'Bricolage Grotesque', sans-serif;
+  }
+
+  .intro {
+    max-width: 38rem;
+    margin: 1.5rem 0 0;
+    color: #566270;
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+
+  section {
+    margin-top: 5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e3e9ef;
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+  }
+
+  .section-copy {
+    max-width: 42rem;
+    margin: -0.5rem 0 1.8rem;
+    color: #566270;
+    line-height: 1.6;
+  }
+
+  .swatches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+  }
+
+  .swatch {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: #303945;
+    font-size: 0.88rem;
+  }
+
+  .swatch code {
+    display: block;
+    margin-top: 0.2rem;
+    color: #7c8792;
+    font-size: 0.75rem;
+  }
+
+  .color-chip {
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid #e0e6ed;
+    border-radius: 0.8rem;
+  }
+
+  .ink { background: #171b22; }
+  .paper { background: #fff; }
+  .primary-blue { background: #2e5db8; }
+  .color-chip.light-ink { background: #7f8b97; }
+  .secondary-action-blue { background: #4a72c5; }
+  .secondary-blue { background: #b8c7fa; }
+
+  @media (max-width: 600px) {
+    .topbar-label { display: none; }
+    main { padding-top: 3.5rem; }
+    section { margin-top: 3.5rem; }
+  }
+</style>

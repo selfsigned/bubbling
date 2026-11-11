@@ -1,0 +1,19 @@
+{
+  "name": "bubbling-landing-demo",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/svelte": "^8.1.2",
+    "@tailwindcss/vite": "^4.3.5",
+    "astro": "^6.4.8",
+    "clsx": "^2.1.1",
+    "svelte": "^5.53.0",
+    "tailwind-merge": "^3.7.0",
+    "tailwind-variants": "^3.3.1",
+    "tailwindcss": "^4.3.5"
+  }
+}

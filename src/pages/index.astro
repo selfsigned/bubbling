@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+import BubblingLogo from '../components/BubblingLogo.svelte';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Bubbling — AI visibility</title>
+    <meta name="description" content="A concept identity for Bubbling, an AI visibility platform." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <BubblingLogo size={38} />
+      <a href="/design-system">Design system</a>
+    </header>
+  </body>
+</html>
+
+<style>
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem clamp(1.25rem, 5vw, 5rem);
+  }
+
+  header a {
+    color: #506274;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+</style>
