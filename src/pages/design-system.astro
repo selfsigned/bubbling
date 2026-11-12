@@ -1,7 +1,12 @@
 ---
 import '../styles/global.css';
 import BubblingLogo from '../components/BubblingLogo.svelte';
+import AIInputShowcase from '../components/design-system/AIInputShowcase.svelte';
 import ButtonShowcase from '../components/design-system/ButtonShowcase.svelte';
+import PersonaCardShowcase from '../components/design-system/PersonaCardShowcase.svelte';
+import AIChatShowcase from '../components/design-system/AIChatShowcase.svelte';
+import AIChatThreadShowcase from '../components/design-system/AIChatThreadShowcase.svelte';
+import InsightsShowcase from '../components/design-system/InsightsShowcase.svelte';
 ---
 
 <html lang="en">
@@ -40,6 +45,13 @@ import ButtonShowcase from '../components/design-system/ButtonShowcase.svelte';
           <div class="swatch"><span class="color-chip secondary-action-blue"></span><span>Secondary action blue <code>#4A72C5</code></span></div>
           <div class="swatch"><span class="color-chip secondary-blue"></span><span>Light secondary blue <code>#B8C7FA</code></span></div>
         </div>
+        <p class="section-copy analysis-token-copy">Conversation analysis highlights</p>
+        <div class="swatches">
+          <div class="swatch"><span class="color-chip analysis-brand"></span><span>Brand mention <code>#DFE5FF</code></span></div>
+          <div class="swatch"><span class="color-chip analysis-positive"></span><span>Positive sentiment <code>#D5EFE7</code></span></div>
+          <div class="swatch"><span class="color-chip analysis-concern"></span><span>Concern <code>#F8DDD3</code></span></div>
+          <div class="swatch"><span class="color-chip analysis-positive-ink"></span><span>Analysis complete <code>#387353</code></span></div>
+        </div>
       </section>
 
       <section aria-labelledby="buttons-heading">
@@ -49,6 +61,45 @@ import ButtonShowcase from '../components/design-system/ButtonShowcase.svelte';
         </div>
         <p class="section-copy">Logo blue is primary; the mid-blue is the secondary action, while pale blue stays a soft accent. Press either button to see its subtle material highlight.</p>
         <ButtonShowcase client:load />
+      </section>
+      <section aria-labelledby="ai-input-heading">
+        <div class="section-heading">
+          <span class="section-number">03</span>
+          <h2 id="ai-input-heading">AI input</h2>
+        </div>
+        <p class="section-copy">A rectangular prompt field with a secondary-blue send action. Submit the demo prompt to reveal Bub generating AI personas; reduced-motion preferences keep the status still.</p>
+        <AIInputShowcase client:load />
+      </section>
+      <section aria-labelledby="persona-card-heading">
+        <div class="section-heading">
+          <span class="section-number">04</span>
+          <h2 id="persona-card-heading">Persona ID card</h2>
+        </div>
+        <p class="section-copy">A compact profile card layered over a WebP portrait, with quick facts and characteristic tags.</p>
+        <PersonaCardShowcase />
+      </section>
+      <section aria-labelledby="ai-chat-heading">
+        <div class="section-heading">
+          <span class="section-number">05</span>
+          <h2 id="ai-chat-heading">AI conversation</h2>
+        </div>
+        <p class="section-copy">A simulated conversation that reveals brand mentions and sentiment with a staggered marker sweep. Replay to see the answer turn into analysis.</p>
+        <AIChatShowcase client:visible />
+      </section>
+      <section aria-labelledby="ai-chat-thread-heading">
+        <div class="section-heading">
+          <span class="section-number">06</span>
+          <h2 id="ai-chat-thread-heading">AI conversation · IM</h2>
+        </div>
+        <AIChatThreadShowcase client:visible />
+      </section>
+      <section aria-labelledby="insights-heading">
+        <div class="section-heading">
+          <span class="section-number">07</span>
+          <h2 id="insights-heading">Bub’s take &amp; conversation report</h2>
+        </div>
+        <p class="section-copy">The next scene, for review: Bub sums up the two conversations, then offers a compact report. Counts describe the scripted demo—not measured AI visibility.</p>
+        <InsightsShowcase client:visible />
       </section>
     </main>
   </body>
@@ -175,6 +226,11 @@ import ButtonShowcase from '../components/design-system/ButtonShowcase.svelte';
   .color-chip.light-ink { background: #7f8b97; }
   .secondary-action-blue { background: #4a72c5; }
   .secondary-blue { background: #b8c7fa; }
+  .analysis-token-copy { margin: 1.8rem 0 1rem; font-size: 0.85rem; }
+  .analysis-brand { background: var(--analysis-brand); }
+  .analysis-positive { background: var(--analysis-positive); }
+  .analysis-concern { background: var(--analysis-concern); }
+  .analysis-positive-ink { background: var(--analysis-positive-ink); }
 
   @media (max-width: 600px) {
     .topbar-label { display: none; }

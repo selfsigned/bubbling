@@ -1,6 +1,9 @@
 ---
 import '../styles/global.css';
 import BubblingLogo from '../components/BubblingLogo.svelte';
+import { Sparkles } from '@lucide/svelte';
+import { Button } from '../lib/components/ui/button/index.js';
+import HeroPersonaFlow from '../components/HeroPersonaFlow.svelte';
 ---
 
 <html lang="en">
@@ -20,23 +23,136 @@ import BubblingLogo from '../components/BubblingLogo.svelte';
   <body>
     <header>
       <BubblingLogo size={38} />
-      <a href="/design-system">Design system</a>
+      <Button>Check my AI visibility</Button>
     </header>
+    <main class="hero">
+      <div class="hero-content">
+        <h1>
+          <span class="hero-line">Know <em class="hero-emphasis">when</em> and <em class="hero-emphasis">why</em></span>
+          <span class="hero-line">you appear in</span>
+          <span class="hero-line hero-final-line">
+            <Sparkles class="sparkle-icon" size={52} strokeWidth={1.6} aria-hidden="true" />
+            <span class="hero-secondary">AI conversations</span>
+          </span>
+        </h1>
+        <p class="hero-subtext">See how AI answers your customers' questions, where your brand fits in, and what you can do about it.</p>
+        <Button class="hero-cta h-9 px-4" size="default">Check my AI visibility</Button>
+      </div>
+      <div class="hero-demo">
+        <HeroPersonaFlow client:load />
+      </div>
+    </main>
   </body>
 </html>
 
 <style>
+  body {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    height: 100svh;
+  }
+
 
   header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem clamp(1.25rem, 5vw, 5rem);
+    padding: 1.5rem clamp(1.25rem, 3.5vw, 4rem);
   }
 
-  header a {
-    color: #506274;
-    font-size: 0.9rem;
-    text-decoration: none;
+  .hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 0;
+  }
+  .hero-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    z-index: 1;
+    width: max-content;
+    max-width: calc(100% - 2.5rem);
+    transform: translate(-50%, -50%);
+  }
+
+  .hero-demo {
+    position: absolute;
+    inset: 1rem clamp(1.25rem, 2.3vw, 3rem);
+    pointer-events: none;
+  }
+
+  .hero-subtext {
+    max-width: 34rem;
+    margin: 0.75rem 0 1rem;
+    color: var(--light-ink);
+    font-size: clamp(0.8rem, 1.1vw, 1rem);
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+
+  h1 {
+    width: fit-content;
+    max-width: 100%;
+    justify-self: center;
+    margin: 0;
+    font-size: clamp(3.2rem, 4.8vw, 5rem);
+    font-weight: 500;
+    letter-spacing: -0.065em;
+    line-height: 0.98;
+    text-align: left;
+    text-wrap: balance;
+  }
+
+  .hero-emphasis {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .hero-line {
+    display: block;
+    width: 100%;
+  }
+
+  .hero-final-line {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+  }
+
+  .hero-secondary,
+  .sparkle-icon {
+    color: var(--secondary-action);
+  }
+
+  .sparkle-icon {
+    flex: 0 0 auto;
+    width: 0.56em;
+    margin-right: -0.06em;
+    height: 0.56em;
+  }
+
+  @media (max-width: 1199px) {
+    body { display: block; height: auto; }
+    .hero {
+      display: grid;
+      place-items: center;
+      grid-template-columns: minmax(0, 1fr);
+      min-height: auto;
+      gap: 4rem;
+      padding-top: clamp(3rem, 8svh, 5rem);
+      padding-bottom: 4rem;
+    }
+    .hero-content { position: static; width: fit-content; max-width: 100%; transform: none; }
+    .hero-demo { position: static; width: min(100%, 48rem); margin-top: 0; }
+  }
+
+  @media (max-width: 600px) {
+    header { gap: 1rem; padding-block: 1.25rem; }
+    h1 { font-size: clamp(2.2rem, 10vw, 3rem); }
+    .hero { gap: 3rem; }
+    .hero-demo { width: min(100%, 26rem); }
   }
 </style>

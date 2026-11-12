@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 4 16 14" width="500" height="500">
+  <!-- Source: abderrahimghazali/clawd-pet; viewBox cropped for avatar use.
+MIT License
+
+Copyright (c) 2026 Abderrahim GHAZALI
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+<defs>
+    <style>
+      .grumpy-body { transform-origin: 7.5px 15px; animation: grumpy-breathe 3s infinite ease-in-out; }
+      .grumpy-shadow { animation: grumpy-s 3s infinite ease-in-out; }
+      @keyframes grumpy-breathe { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.02); } }
+      @keyframes grumpy-s { 0%, 100% { opacity: 0.5; } 50% { opacity: 0.45; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+  </defs>
+  <rect class="grumpy-shadow" x="3" y="15" width="9" height="1" fill="#000" opacity="0.5"/>
+  <g class="grumpy-body">
+    <g fill="#DE886D">
+      <rect x="3" y="13" width="1" height="2"/><rect x="5" y="13" width="1" height="2"/>
+      <rect x="9" y="13" width="1" height="2"/><rect x="11" y="13" width="1" height="2"/>
+      <rect x="2" y="6" width="11" height="7"/>
+      <!-- arms crossed in front -->
+      <rect x="4" y="10" width="3" height="2"/>
+      <rect x="8" y="10" width="3" height="2"/>
+    </g>
+    <g fill="#000">
+      <!-- furrowed brows -->
+      <rect x="4" y="7" width="1" height="1"/><rect x="5" y="8" width="1" height="1"/>
+      <rect x="12" y="7" width="1" height="1"/><rect x="11" y="8" width="1" height="1"/>
+      <!-- eyes -->
+      <rect x="5" y="9" width="1" height="2"/>
+      <rect x="11" y="9" width="1" height="2"/>
+    </g>
+  </g>
+</svg>

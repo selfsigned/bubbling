@@ -18,6 +18,10 @@
   --ring: #5797d3;
   --destructive: #c9343d;
   --radius: 0.85rem;
+  --analysis-brand: #dfe5ff;
+  --analysis-positive: #d5efe7;
+  --analysis-concern: #f8ddd3;
+  --analysis-positive-ink: #387353;
 }
 
 @theme inline {
