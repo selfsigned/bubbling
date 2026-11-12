@@ -61,7 +61,6 @@
               animate={chatsVisible}
               typingSpeed={32}
               thinkingDuration={850 + index * 500}
-              followUpDelay={1100}
               onComplete={finishChat}
             />
           </div>

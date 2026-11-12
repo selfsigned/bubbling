@@ -32,7 +32,7 @@ export type ChatTurn = {
 
   let {
     personaName, personaImage, turns, animate = false, assistant = 'claude', size = 'default', typingSpeed = 24,
-    thinkingDuration = 700, highlightDelay = 400, followUpDelay = 800, onComplete, presentation = 'thread',
+    thinkingDuration = 700, highlightDelay = 400, followUpDelay = 3500, onComplete, presentation = 'thread',
   }: Props = $props();
 
   let stage = $state<'thinking' | 'typing' | 'analyzing' | 'waiting' | 'complete'>('complete');
